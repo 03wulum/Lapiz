@@ -1,52 +1,49 @@
 <template>
 <div>
-     <v-row>
-    <v-col
-      cols="12"
-      sm="6"
-      offset-sm="3"
+<template>
+  <v-card>
+    <v-tabs
+      color="deep-purple accent-4"
+      right
     >
-      <v-card height="200px">
-        <v-card-title class="blue white--text">
-          <span class="text-h5">Menu</span>
+      <v-tab>Landscape</v-tab>
+      <v-tab>City</v-tab>
+      <v-tab>Abstract</v-tab>
 
-          <v-spacer></v-spacer>
-
-          <v-menu
-            bottom
-            left
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                dark
-                icon
-                v-bind="attrs"
-                v-on="on"
-              >
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
-            </template>
-
-            <v-list>
-              <v-list-item
-                v-for="(item, i) in items"
-                :key="i"
-              >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-card-title>
-
-        <v-card-text>Lorem Ipsum</v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+      <v-tab-item
+        v-for="n in 3"
+        :key="n"
+      >
+        <v-container fluid>
+          <v-row>
+            <v-col
+              v-for="i in 6"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <!-- <v-img
+                :src="`https://picsum.photos/500/300?image=${i * n * 5 + 10}`"
+                :lazy-src="`https://picsum.photos/10/6?image=${i * n * 5 + 10}`"
+                aspect-ratio="1"
+              ></v-img> -->
+              <q-card/>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-tab-item>
+    </v-tabs>
+  </v-card>
+</template>
 </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import qCard from '../qoute/qCard.vue'
 export default Vue.extend({
+    components: {
+      qCard
+  },
    data: () => ({
       items: [
         { title: 'Click Me' },
