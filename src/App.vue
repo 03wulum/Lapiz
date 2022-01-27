@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navigation/>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/Profile">Profile</router-link>
@@ -10,11 +11,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
+import navigation from '../src/components/Nav/NavBar.vue'
 export default Vue.extend({
   name: 'App',
   components: {
-    
+    navigation
   }
 });
 </script>
