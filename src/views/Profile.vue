@@ -1,7 +1,8 @@
 <template>
   <div class="container">
       <h1>Profile</h1>
-    <q-card/>
+      <div class="card"><q-card /></div>
+
   </div>
 </template>
 
@@ -15,3 +16,12 @@ export default {
   }
 }
 </script>
+
+
+<style>
+.container {
+  width: 20%;
+  margin: 0 auto;
+}
+
+</style>

@@ -27,7 +27,7 @@
                 :lazy-src="`https://picsum.photos/10/6?image=${i * n * 5 + 10}`"
                 aspect-ratio="1"
               ></v-img> -->
-              <q-card/>
+              <!-- <q-card/> -->
             </v-col>
           </v-row>
         </v-container>
@@ -39,10 +39,10 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import qCard from '../qoute/qCard.vue'
+// import qCard from '../qoute/qCard.vue'
 export default Vue.extend({
     components: {
-      qCard
+      // qCard
   },
    data: () => ({
       items: [
