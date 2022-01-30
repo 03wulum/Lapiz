@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-      <!-- <h1>Profile</h1> -->
       <div class="card-profile">
-        <q-card  @toggleReply="toggleReply">
+        <q-card  @toggleReply="toggleReply" :isQreplyToggled=isQreplyToggled>
         </q-card >
       </div>
 
@@ -17,9 +16,12 @@ export default {
   components: {
       qCard
   },
+      data: () => ({
+        isQreplyToggled: false,
+    }),
   methods: {
     toggleReply() {
-      console.log('test');
+      this.isQreplyToggled = !this.isQreplyToggled
     }
   }
 }

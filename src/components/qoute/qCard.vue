@@ -18,10 +18,6 @@
 
       </v-list-item>
     </v-card-actions>
-
-    <!-- <v-card-text class="text-h5 white--text font-weight-bold">
-      "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
-    </v-card-text> -->
     
     <div class="parentQ" >
       <div class="qReply" style="width: 280px"> <v-list-item-title>Evan You</v-list-item-title>
@@ -34,20 +30,26 @@
 
         <v-row
           align="center"
-          justify="end"
+          justify="end" class="icon-reactions"
         >
+        <div>
           <v-icon class="mr-1">
             mdi-heart
           </v-icon>
-          <span class="subheading mr-2">256</span>
-
-          <v-icon class="mr-1">
+          <span >256</span>   
+        </div>
+ 
+        <div>
+                 <v-icon class="mr-1">
             mdi-share-variant
           </v-icon>
 
-          <span class="subheading">45</span>
-                    <v-icon class="mr-1" @click="$emit('toggleReply')">mdi-comment</v-icon>
+          <span class="subheading">45</span> 
+        </div>
+        <div>
+              <v-icon class="mr-1" @click="$emit('toggleReply')">mdi-comment</v-icon>
                               <span class="subheading">45</span>
+        </div>          
         </v-row>
       </v-list-item>
     </v-card-actions>
@@ -73,30 +75,36 @@
           ></v-img>
         </v-list-item-avatar>
       <div class="qReply" style="width: 200px">
+                <v-list-item-content>
+          <v-list-item-title>Evan You</v-list-item-title>
+        </v-list-item-content>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
     </div>
     <v-card-actions>
       <v-list-item class="grow">
 
-
-        <v-list-item-content>
-          <v-list-item-title>Evan You</v-list-item-title>
-        </v-list-item-content>
-
         <v-row
           align="center"
-          justify="end"
+          justify="end" class="icon-reactions"
         >
+        <div>
           <v-icon class="mr-1">
             mdi-heart
           </v-icon>
-          <span class="subheading mr-2">256</span>
-
-          <v-icon class="mr-1">
+          <span >256</span>   
+        </div>
+        <div>
+                 <v-icon class="mr-1">
             mdi-share-variant
           </v-icon>
-          <span class="subheading">45</span>
+
+          <span class="subheading">45</span> 
+        </div>
+        <div>
+              <v-icon class="mr-1" @click="$emit('toggleReply')">mdi-comment</v-icon>
+                              <span class="subheading">45</span>
+        </div>          
         </v-row>
       </v-list-item>
     </v-card-actions>
@@ -119,13 +127,8 @@
       }
     },
 
-    data: () => ({
-    }),
+
     methods: {
-      toggleReply() {
-        console.log('test')
-        // this.$emit('toggleReply')
-      }
     }
   })
 </script>
@@ -151,9 +154,14 @@
   .qReply {
     margin-left: 15px; 
     margin-right: 10px;  
-    padding-right: 3rem;
+    padding-right: 2.5rem;
     word-break: break-word;
     white-space: normal;
     text-align: left;
+  }
+  .icon-reactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 </style>
