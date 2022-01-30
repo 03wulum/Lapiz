@@ -46,7 +46,7 @@
           </v-icon>
 
           <span class="subheading">45</span>
-                    <v-icon class="mr-1">mdi-comment</v-icon>
+                    <v-icon class="mr-1" @click="$emit('toggleReply')">mdi-comment</v-icon>
                               <span class="subheading">45</span>
         </v-row>
       </v-list-item>
@@ -65,12 +65,6 @@
     </div>
 
     <div class="thread" >
-      <div class="qReply" style="width: 280px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </div>
-    <v-card-actions>
-      <v-list-item class="grow">
         <v-list-item-avatar color="grey darken-3">
           <v-img
             class="elevation-6"
@@ -78,6 +72,13 @@
             src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
           ></v-img>
         </v-list-item-avatar>
+      <div class="qReply" style="width: 200px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+    <v-card-actions>
+      <v-list-item class="grow">
+
 
         <v-list-item-content>
           <v-list-item-title>Evan You</v-list-item-title>
@@ -112,7 +113,7 @@
 
     props:  {
       isQreplyToggled: {
-        required: true,
+        required: false,
         type: Boolean,
         default: false
       }
@@ -120,6 +121,12 @@
 
     data: () => ({
     }),
+    methods: {
+      toggleReply() {
+        console.log('test')
+        // this.$emit('toggleReply')
+      }
+    }
   })
 </script>
 
