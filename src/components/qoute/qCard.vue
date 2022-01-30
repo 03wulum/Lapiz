@@ -67,7 +67,7 @@
     <div class="thread" >
         <v-list-item-avatar color="grey darken-3">
           <v-img
-            class="elevation-6"
+            class="elevation-6 profile-image"
             alt=""
             src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
           ></v-img>
@@ -138,14 +138,20 @@
     overflow: hidden;
     text-align: left
   }
+  .profile-image {
+
+  }
   .parentQ {
     position:relative;
     margin-left: 40px;
     overflow: hidden;
     text-align: left;
+    margin-left: 1rem;
   }
   .qReply {
-    margin-left: 15px;   
+    margin-left: 15px; 
+    margin-right: 10px;  
+    padding-right: 3rem;
     word-break: break-word;
     white-space: normal;
     text-align: left;
