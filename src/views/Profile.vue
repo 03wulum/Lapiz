@@ -28,12 +28,6 @@ export default {
 </script>
 <style>
 .container {
-  /* width: 20%; */
-  /* margin: 0 auto;
-  display: block;
-    position: absolute;
-    width: 100%;
-    height: auto; */
   display: grid;  
     grid-template-columns: 1fr 1fr 1fr;  
     grid-template-rows: 50px 50px;  
@@ -42,6 +36,5 @@ export default {
 .card-profile {
   grid-column-start: 2;
   margin: auto;
-    /* grid-column-end: 3; */
 }
 </style>
