@@ -26,7 +26,7 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss" scoped>
 .container {
   display: grid;  
     grid-template-columns: 1fr 1fr 1fr;  
@@ -37,4 +37,4 @@ export default {
   grid-column-start: 2;
   margin: auto;
 }
-</style>
+</style>>
