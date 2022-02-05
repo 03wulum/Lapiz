@@ -5,12 +5,12 @@
         <div id="qoute-of-day-title">
         <h2><b>Qoute of the Day</b></h2>     
         <div id="qoute-creator">
-              <h6>By Etricia Seko</h6> 
+              <h6>By {{author}}</h6> 
         </div>
     
         </div>
         <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {{quoteOfDay}}
         </p>
     
       </div>
@@ -24,6 +24,24 @@
 export default {
   name: 'Home',
   components: {
+  },
+  created() {
+    this.fetchQuoteOfDay()
+  },
+     data: () => ({
+      quoteOfDay: '',
+      author:'',
+    }),
+  methods: {
+    fetchQuoteOfDay() {
+      const uri = 'http://localhost:4000/quoteOfDay';
+      this.$http.get(uri)
+      .then((result) => {
+        console.log(result)
+        this.quoteOfDay = result.data[0].text
+        this.author = result.data[0].author
+      })
+    }
   }
 }
 </script>
@@ -35,11 +53,12 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   margin: auto;
-  margin-top: 10rem;
+  margin-top: 3rem;
   width: 70%;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 #qoute-of-day-title {
    margin-bottom: 10px;
