@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <navigation/>
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/Profile">Profile</router-link>
     </div>
-    <router-view/>
+    <router-view/> -->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import navigation from '../src/components/Nav/NavBar.vue'
+import navigation from './components/Nav/NewNav.vue'
 export default Vue.extend({
   name: 'App',
   components: {
